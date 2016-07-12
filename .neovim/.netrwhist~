@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/cfitzhugh/working/NYCSCC-map-viewer/src/vendor'
+let g:netrw_dirhist_2='/home/cfitzhugh/working/NYCSCC-map-viewer/src/js'
+let g:netrw_dirhist_3='/home/cfitzhugh/.vim'
+let g:netrw_dirhist_4='/home/cfitzhugh/working/sindicati-publish/src/sindicati_publish'
+let g:netrw_dirhist_5='/home/cfitzhugh/working/NYCSCC-map-viewer/src/js/renderers'
