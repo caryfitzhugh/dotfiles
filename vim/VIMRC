@@ -1,6 +1,7 @@
 let mapleader=','
 
-call plug#begin(expand('<sfile>:p:h') . '/plugged')
+execute 'set runtimepath^=' . expand('<sfile>:p:h')
+call plug#begin()
 
 " List your plugins here
 Plug 'tpope/vim-sensible'
@@ -24,11 +25,11 @@ Plug 'andymass/vim-matchup'
 set background=dark
 call plug#end()
 
-so <sfile>:p:h/ale.vim
-so <sfile>:p:h/deletefile.vim
-so <sfile>:p:h/coc.vim
-so <sfile>:p:h/reledit.vim
-so <sfile>:p:h/python.vim
+runtime ale.vim
+runtime deletefile.vim
+runtime coc.vim
+runtime reledit.vim
+runtime python.vim
 
 colorscheme everforest
 set shiftwidth=2

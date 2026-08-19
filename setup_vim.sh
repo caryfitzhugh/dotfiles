@@ -3,6 +3,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 mkdir -p ~/.vim/{swap,backup,undo}
 
+rm -f ~/.vimrc
 echo "source $SCRIPT_DIR/vim/VIMRC" > ~/.vimrc
 
 PACKAGES=(
