@@ -38,5 +38,5 @@ echo
 echo "Done."
 echo "Username: $(whoami)"
 echo
-echo "Next: put your iPhone's PUBLIC SSH key in:"
+echo "Next: put your PUBLIC SSH keys in:"
 echo "  ~/.ssh/authorized_keys"
