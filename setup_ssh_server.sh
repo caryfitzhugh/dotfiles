@@ -1,42 +1,27 @@
 #!/usr/bin/env bash
 set -e
 
-echo "==> Installing OpenSSH server..."
-sudo apt update
-sudo apt install -y openssh-server
-
-echo "==> Generating SSH host keys if necessary..."
-sudo ssh-keygen -A
-
-echo "==> Configuring sshd..."
-sudo tee /etc/ssh/sshd_config.d/99-wsl.conf >/dev/null <<'EOF'
-Port 22
-PasswordAuthentication no
-PubkeyAuthentication yes
-PermitRootLogin no
-EOF
-
-echo "==> Checking configuration..."
-sudo sshd -t
-
-echo "==> Starting SSH server..."
-if command -v systemctl >/dev/null 2>&1 && systemctl is-system-running >/dev/null 2>&1; then
-    sudo systemctl enable --now ssh
-else
-    sudo service ssh start
+echo "==> Checking Tailscale..."
+if ! command -v tailscale >/dev/null 2>&1; then
+    echo "ERROR: Tailscale is not installed in this WSL instance."
+    exit 1
 fi
 
-echo
-echo "==> SSH server status:"
-sudo service ssh status --no-pager || true
+if ! tailscale status >/dev/null 2>&1; then
+    echo "ERROR: Tailscale is not running/authenticated."
+    echo "Run: sudo tailscale up"
+    exit 1
+fi
+
+echo "==> Enabling Tailscale SSH..."
+sudo tailscale set --ssh
 
 echo
-echo "==> Listening on:"
-sudo ss -lntp | grep ':22' || true
+echo "==> Tailscale SSH is enabled."
+echo
+echo "Tailscale IP:"
+tailscale ip -4
 
 echo
-echo "Done."
-echo "Username: $(whoami)"
-echo
-echo "Next: put your PUBLIC SSH keys in:"
-echo "  ~/.ssh/authorized_keys"
+echo "Hostname:"
+tailscale status --self
