@@ -11,3 +11,7 @@ PACKAGES=(
 )
 sudo apt update
 sudo apt install -y "${PACKAGES[@]}"
+
+vim -E -s -c 'PlugInstall --sync' -c 'qa!' 2>&1
+
+exec $SCRIPT_DIR/setup_node.sh
