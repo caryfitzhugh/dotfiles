@@ -4,9 +4,9 @@ git_prompt() {
     [[ -z "$branch" ]] && return
 
     if [[ -n "$(git status --porcelain 2>/dev/null)" ]]; then
-        printf '\e[4m%s\e[24m' "$branch"
+        printf '\e[4m%s\e[24m*' "$branch"
     else
-        printf '%s' "$branch"
+        printf '\e[4m%s\e[24m' "$branch"
     fi
 }
 
@@ -46,4 +46,4 @@ smart_path() {
 }
 
 
-export PS1='\[\e[38;2;45;212;191m\]\T $(smart_path) $(git_prompt) > \[\e[0m\]'
+export PS1='\[\e[38;2;45;212;191m\]\T $(git_prompt) $(smart_path) ❯ \[\e[0m\]'
