@@ -8,4 +8,3 @@ add_bashrc_line() {
 }
 
 add_bashrc_line "[ -f \"$SCRIPT_DIR/bashrc\" ] && source \"$SCRIPT_DIR/bashrc\""
-echo "checking''."

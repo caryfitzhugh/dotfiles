@@ -82,4 +82,4 @@ smart_path() {
     printf '%s' "$result"
 }
 
-export PS1='${DIM}\T${NO_DIM} $(git_prompt) $(smart_path) ❯ '
+export PS1='${DIM}\T${NO_DIM} $(git_prompt) $(smart_path)❯ '
