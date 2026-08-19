@@ -5,3 +5,9 @@ mkdir -p ~/.vim/{swap,backup,undo}
 
 rm ~/.vimrc
 ln -s ~/.vimrc $SCRIPT_DIR/vim/VIMRC
+
+PACKAGES=(
+    vim
+)
+sudo apt update
+sudo apt install -y "${PACKAGES[@]}"
