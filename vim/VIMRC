@@ -30,6 +30,8 @@ runtime deletefile.vim
 runtime coc.vim
 runtime reledit.vim
 runtime python.vim
+runtime c.vim
+runtime javascript.vim
 
 colorscheme everforest
 set shiftwidth=2
