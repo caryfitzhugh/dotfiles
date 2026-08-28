@@ -20,6 +20,5 @@ augroup coc_c
 
   autocmd FileType c,cpp nnoremap <silent><buffer> K
         \ :call CocActionAsync('doHover')<CR>
-  autocmd FileType c,cpp nnoremap <silent><buffer> <leader>e
-        \ :call CocActionAsync('diagnosticInfo')<CR>
+  " autocmd FileType c,cpp nnoremap <silent><buffer> <leader>e :call CocActionAsync('diagnosticInfo')<CR>
 augroup END

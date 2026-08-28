@@ -34,7 +34,7 @@ augroup coc_javascript_typescript
   autocmd FileType javascript,javascriptreact,typescript,typescriptreact nmap <silent><buffer> <leader>ac <Plug>(coc-codeaction-cursor)
   autocmd FileType javascript,javascriptreact,typescript,typescriptreact nmap <silent><buffer> <leader>qf <Plug>(coc-fix-current)
   autocmd FileType javascript,javascriptreact,typescript,typescriptreact nnoremap <silent><buffer> K :call CocActionAsync('doHover')<CR>
-  autocmd FileType javascript,javascriptreact,typescript,typescriptreact nnoremap <silent><buffer> <leader>e :call CocActionAsync('diagnosticInfo')<CR>
+  " autocmd FileType javascript,javascriptreact,typescript,typescriptreact nnoremap <silent><buffer> <leader>e :call CocActionAsync('diagnosticInfo')<CR>
   autocmd FileType javascript,javascriptreact,typescript,typescriptreact nnoremap <silent><buffer> <leader>oi :call CocActionAsync('runCommand', 'editor.action.organizeImport')<CR>
 
   " Trigger completion manually and format through the active language server.

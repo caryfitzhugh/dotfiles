@@ -16,7 +16,6 @@ Plug 'dense-analysis/ale'
 
 " CoC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mfussenegger/nvim-jdtls'
 
 Plug 'fisadev/vim-isort'
 
