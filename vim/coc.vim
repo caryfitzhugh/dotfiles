@@ -27,3 +27,9 @@ if has("nvim-0.5.0") || has("patch-8.1.1564")
 else
   set signcolumn=yes
 endif
+
+let g:coc_global_extensions = [
+  \ 'coc-rust-analyzer',
+  \ 'coc-json',
+  \ 'coc-yaml',
+  \ ]
