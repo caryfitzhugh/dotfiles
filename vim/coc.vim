@@ -28,8 +28,11 @@ else
   set signcolumn=yes
 endif
 
+
 let g:coc_global_extensions = [
   \ 'coc-rust-analyzer',
   \ 'coc-json',
   \ 'coc-yaml',
   \ ]
+
+command! CocRename call CocActionAsync('rename')

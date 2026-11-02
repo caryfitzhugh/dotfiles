@@ -9,6 +9,8 @@ let g:ale_linters = {
 let g:ale_c_build_dir_names = ['build']
 let g:ale_fixers = {
             \ 'python': ['ruff'],
+            \ 'c': ['clang-format', 'remove_trailing_lines', 'trim_whitespace'],
+            \ 'cpp': ['clang-format', 'remove_trailing_lines', 'trim_whitespace'],
             \ '*': ['remove_trailing_lines', 'trim_whitespace'],
             \ }
 let g:ale_python_ruff_use_global = 1

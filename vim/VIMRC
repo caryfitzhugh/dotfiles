@@ -21,9 +21,15 @@ Plug 'fisadev/vim-isort'
 
 Plug 'andymass/vim-matchup'
 
-set background=dark
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
+set background=dark
+
+" FuzzyFile searcher
+nnoremap <leader>ff :GFiles<CR>
 runtime ale.vim
 runtime deletefile.vim
 runtime coc.vim
@@ -31,12 +37,17 @@ runtime reledit.vim
 runtime python.vim
 runtime c.vim
 runtime javascript.vim
+runtime funcs.vim
 
 colorscheme everforest
 set shiftwidth=2
 set tabstop=2
 set et
 set number
+" even in yaml
+autocmd FileType yaml setlocal expandtab shiftwidth=2 softtabstop=2
+
+
 
 set statusline="%f%m%r%h%w [%Y] [0x%02.2B]%< %F%=%4v,%4l %3p%% of %L"
 autocmd BufWritePre *.py :%s/\s\+$//e
@@ -50,3 +61,8 @@ set backupdir=$HOME/.vim/backup//
 set undodir=$HOME/.vim/undo//
 
 set t_BE=
+
+set exrc
+
+" mkdir edit all in one
+command! -nargs=1 -complete=file MkdirAndEdit call mkdir(fnamemodify(<q-args>, ':h'), 'p') | edit <args>

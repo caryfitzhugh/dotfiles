@@ -23,3 +23,5 @@ endfunction
 com! Rm call DeleteFile()
 "delete the file and quit the buffer (quits vim if this was the last file)
 com! RM call DeleteFile() <Bar> q!
+
+com! -nargs=1 -complete=file Mv execute 'saveas' fnameescape(<q-args>) | call delete(expand('#:p'))

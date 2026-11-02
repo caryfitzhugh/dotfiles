@@ -1,5 +1,13 @@
 # Vim configuration
 
+
+```
+,ff - fuzzy search
+Ctrl-o go back up edit stack
+
+Ctrl-N / P - move in suggestor
+Ctrl-Y select
+```
 ## Setup
 
 Run the repository setup script:
